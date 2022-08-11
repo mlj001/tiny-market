@@ -1,0 +1,43 @@
+#V2
+(contract-call? .sip009-nft mint tx-sender)
+(contract-call? .sip009-nft get-owner u1)
+(contract-call? .tiny-market set-whitelisted .test-sip009 true)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u1000, payment-asset-contract: none})
+::list_assets
+::assets
+(contract-call? .tiny-market set-whitelisted .sip009-nft true)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u1000, payment-asset-contract: none})
+(contract-call? .tiny-market get-listing u0)
+(contract-call? .sip009-nft get-owner u1)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u555, expiry: u500, price: u1000, payment-asset-contract: none})
+(contract-call? .tiny-market cancel-listing u0 .sip009-nft)
+(contract-call? .sip009-nft mint tx-sender)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u150, payment-asset-contract: none})
+(contract-call? .sip009-nft mint tx-sender)
+(contract-call? .sip009-nft get-owner u1)
+(contract-call? .tiny-market set-whitelisted .test-sip009 true)
+(contract-call? .tiny-market set-whitelisted .sip009-nft true)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u1000, payment-asset-contract: none})
+(contract-call? .tiny-market get-listing u0)
+(contract-call? .sip009-nft get-owner u1)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u555, expiry: u500, price: u1000, payment-asset-contract: none})
+(contract-call? .tiny-market cancel-listing u0 .sip009-nft)
+(contract-call? .sip009-nft mint tx-sender)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u2, expiry: u500, price: u150, payment-asset-contract: none})
+(contract-call? .tiny-market fulfil-listing-stx u0 .sip009-nft)
+(contract-call? .tiny-market fulfil-listing-stx u1 .sip009-nft)
+::set_tx_sender ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5
+(contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.tiny-market fulfil-listing-stx u1 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.sip009-nft)
+::get_asset_maps
+::get_assets_maps
+(contract-call? .sip009-nft mint tx-sender)
+(contract-call? .sip010-token mint u1000 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u800, payment-asset-contract: (some .sip010-token)})
+(contract-call? .tiny-market list-asset .sip010-nft {taker: none, token-id: u1, expiry: u500, price: u800, payment-asset-contract: (some .sip010-token)})
+(contract-call? .tiny-market list-asset .sip010-ft {taker: none, token-id: u1, expiry: u500, price: u800, payment-asset-contract: (some .sip010-token)})
+(contract-call? .sip010-token mint u1000 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5)
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u800, payment-asset-contract: (some .sip010-token)})
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u0, expiry: u500, price: u800, payment-asset-contract: (some .sip010-token)})
+(contract-call? .tiny-market list-asset .sip009-nft {taker: none, token-id: u1, expiry: u500, price: u800, payment-asset-contract: (some .sip010-token)})
+::set_tx_sender ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5
+(contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.tiny-market fulfil-listing-stx u0 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.sip009-nft)
